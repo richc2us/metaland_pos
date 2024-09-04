@@ -90,7 +90,14 @@ export default function Agent() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({contact: person}),
+          body: JSON.stringify({
+            contact: person, 
+            address:person, 
+            commission_percentage:person.commission_percentage,
+            team_leader: person.team_leader,
+            realty: person.realty,
+            pay_scheme: person.pay_scheme
+          }),
         });
       } else {
         // if we are updating a record we will PATCH to /record/:id.
